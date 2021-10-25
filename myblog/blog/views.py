@@ -15,3 +15,4 @@ def blog_post(request, id):
     blog = Blog.objects.get(id=id)
     context = {"blog": blog}
     return render(request, "blog/blog_post.html", context)
+
