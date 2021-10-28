@@ -2,11 +2,9 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 import git
-from django.shortcuts import render
 from django.http import HttpResponse
+from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
-
-from myblog.blog import apps
 
 from .models import Blog
 
@@ -22,8 +20,6 @@ def blog_post(request, id):
     blog = Blog.objects.get(id=id)
     context = {"blog": blog}
     return render(request, "blog/blog_post.html", context)
-
-#Route for the GitHub webhook
 
 @csrf_exempt
 def update(request):
