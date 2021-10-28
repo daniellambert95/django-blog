@@ -24,19 +24,11 @@ def blog_post(request, id):
     return render(request, "blog/blog_post.html", context)
 
 #Route for the GitHub webhook
-@apps.route('/git_update', methods=['POST'])
-def git_update():
-  repo = git.Repo('./django-blog')
-  origin = repo.remotes.origin
-  repo.create_head('main', 
-  origin.refs.main).set_tracking_branch(origin.refs.main).checkout()
-  origin.pull()
-  return '', 200
 
 @csrf_exempt
 def update(request):
     if request.method == "POST":
-        repo = git.Repo("danjlambert95.pythonanywhere.com/") 
+        repo = git.Repo("django_blog/") 
         origin = repo.remotes.origin
 
         origin.pull()
