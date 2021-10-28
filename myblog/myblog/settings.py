@@ -57,12 +57,19 @@ MARKDOWNIFY = {
             'blockquote',
             'em',
             'i',
+            'img',
             'li',
             'ol',
             'p',
+            'pre',
             'strong',
             'ul'
         ],
+        "BLEACH": True,
+        "MARKDOWN_EXTENSIONS": [
+            'markdown.extensions.fenced_code',
+        ],
+        "STRIP": True,
         "WHITELIST_ATTRS": [
             'href',
             'src',
