@@ -1,6 +1,3 @@
-from django.shortcuts import render
-from django.http import HttpResponse
-
 import git
 from django.http import HttpResponse
 from django.shortcuts import render
