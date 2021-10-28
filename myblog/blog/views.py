@@ -1,6 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
+import git
+from django.shortcuts import render
+from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
+
 from .models import Blog
 
 # Create your views here.
@@ -15,11 +20,6 @@ def blog_post(request, id):
     blog = Blog.objects.get(id=id)
     context = {"blog": blog}
     return render(request, "blog/blog_post.html", context)
-
-import git
-from django.shortcuts import render
-from django.http import HttpResponse
-from django.views.decorators.csrf import csrf_exempt
 
 @csrf_exempt
 def update(request):
