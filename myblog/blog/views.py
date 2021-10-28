@@ -6,6 +6,8 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 
+from myblog.blog import apps
+
 from .models import Blog
 
 # Create your views here.
@@ -20,6 +22,16 @@ def blog_post(request, id):
     blog = Blog.objects.get(id=id)
     context = {"blog": blog}
     return render(request, "blog/blog_post.html", context)
+
+#Route for the GitHub webhook
+@apps.route('/git_update', methods=['POST'])
+def git_update():
+  repo = git.Repo('./django-blog')
+  origin = repo.remotes.origin
+  repo.create_head('main', 
+  origin.refs.main).set_tracking_branch(origin.refs.main).checkout()
+  origin.pull()
+  return '', 200
 
 @csrf_exempt
 def update(request):
