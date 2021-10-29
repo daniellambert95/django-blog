@@ -1,4 +1,4 @@
 from git import Repo
 
-repo = Repo("/Users/temporaryadmin/DCI_Projects/django-blog/myblog")
+repo = Repo("/home/danjlambert95/django-blog/myblog/")
 assert not repo.bare
