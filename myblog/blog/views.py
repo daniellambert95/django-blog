@@ -19,6 +19,12 @@ def blog_post(request, id):
     context = {"blog": blog}
     return render(request, "blog/blog_post.html", context)
 
+def post(request, id):
+    post = Post.objects.get(id=id)
+    context = {"post": post}
+    return render(request, "blog/post.html", context)
+
+
 @csrf_exempt
 def update(request):
     if request.method == "POST":
