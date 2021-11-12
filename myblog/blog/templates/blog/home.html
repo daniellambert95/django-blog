@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body>
+    <h1>Daniels blog, focusing on django and the pythonanwhere server</h1>
      
     {% for blog in blog_posts %}
         <p><a href="/blog/{{ blog.id}}/">{{ blog.title }}</a></p>
