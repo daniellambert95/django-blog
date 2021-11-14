@@ -4,6 +4,7 @@ bleach==4.1.0
 click==8.0.1
 Django==3.2.8
 django-markdownify==0.9.0
+django-summernote==0.8.20.0
 flake8==3.9.2
 Flask==2.0.2
 itsdangerous==2.0.1
