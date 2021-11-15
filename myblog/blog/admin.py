@@ -1,7 +1,7 @@
 from django.contrib import admin
 from . import models
 from django_summernote.admin import SummernoteModelAdmin
-from .models import Blog 
+from .models import Blog, stock_app 
 # Register your models here.
 
 
@@ -24,3 +24,6 @@ class  SummerAdmin(SummernoteModelAdmin):
 
 admin.site.register(models.Post, SummerAdmin)
 blog_site.register(models.Post, SummerAdmin)
+
+#this block is for stock_app
+admin.site.register(stock_app)

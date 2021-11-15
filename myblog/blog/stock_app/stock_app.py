@@ -3,6 +3,8 @@
 import yfinance as yf
 import pandas as pd
 import matplotlib.pyplot as plt
+import base64
+from io import BytesIO
 from datetime import datetime
 plt.style.use('seaborn')
 
@@ -55,6 +57,8 @@ if ticker.info['longName'] != None:
     print(f"52 week change : {year_change}")
 
     print(ticker.recommendations)
+    print(type(ticker.institutional_holders))
+    print(type(ticker.recommendations))
     print(ticker.institutional_holders)
 else:
     print("Ticker symbol is not valid please try again.")
@@ -68,9 +72,25 @@ df = stock_history
 plt.figure()
 # Here we can use Open and High below
 plt.plot(df['Close'])
+plt.title('5 year chart')
 plt.ylabel('Price $')
 plt.xlabel('Year')
 plt.show()
+
+def get_graph():
+    buffer = BytesIO()
+    plt.savefig(buffer, format='png')
+    buffer.seek(0)
+    image_png = buffer.getvalue()
+    graph = base64.b64encode(image_png)
+    graph = graph.decode('utf8')
+    buffer.close()
+    return graph
+
+def get_plot(x, y):
+    # ...
+    graph = get_graph()
+    return graph
 
 # https://www.youtube.com/watch?v=9nB__kJio-M
 # If we want multiple tickers being showed in the table data, go to the end of this video

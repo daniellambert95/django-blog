@@ -20,6 +20,7 @@ from django.urls import include
 from django.conf import settings
 from django.conf.urls.static import static
 
+
 urlpatterns = [
     path("", views.home, name="home"),
     path("blog/<int:id>/", views.blog_post, name="blog_post"),

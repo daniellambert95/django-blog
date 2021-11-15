@@ -39,6 +39,9 @@ def stock_info(request, ticker_symbol):
     print(ticker_info)
     return render(request, "blog/stock_api.html", ticker_info)
 
+def main_view(request):
+    return render(request, "blog/graph.html", {})
+
 
 @csrf_exempt
 def update(request):

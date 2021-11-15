@@ -11,10 +11,13 @@
         <nav>
           <ul class="navmenu">
             <li>
-              <a class="link1" href="" id="currentpage"> Home</a>
+              <a class="link1" href="" > Home</a>
             </li>
             <li>
               <a class="link1" href=#> Blog</a>
+            </li>
+            <li>
+              <a class="link1" href=# id="currentpage"> Stocks App</a>
             </li>
             <li>
               <a class="link1" href=#> About</a>
@@ -29,44 +32,59 @@
             </li>
           </ul>
         </nav>
-        <h1>Stock data taken from Yahoo Finance</h1>
+        <h1>{{ longName }} Stock Data</h1>
       
         <p>
           Company name: {{ longName }}
         </p>
+        <br>
         <p>
           Ticker symbol: {{ symbol }}
         </p>
+        <br>
         <p>
           Currency: {{ financialCurrency }}
         </p>
+        <br>
         <p>
           Sector: {{ sector }}
         </p>
+        <br>
         <p>
           About: {{ longBusinessSummary }}
         </p>
-        <p>
-          52 Week high: {{ fiftyTwoWeekHigh }}
-        </p>
-        <p>
-          52 Week low: {{ fiftyTwoWeekLow }}
-        </p>
-        <p>
-          200 Day average: {{ twoHundredDayAverage }}
-        </p>
-        <p>
-          50 Day average: {{ fiftyDayAverage }}
-        </p>
-        <p>
-          Previous close: {{ previousClose }}
-        </p>
-        <p>
-          Open: {{ regularMarketOpen }}
-        </p>
-        <p>
-          52 Week change: {{ 52WeekChange }}
-        </p>
+        <br>
+        <table class="table">
+        <tr>
+          <td>52 Week high:</td>
+          <td id="td2">${{ fiftyTwoWeekHigh }}</td>
+        </tr>
+        <tr>
+          <td>52 Week low:</td>
+          <td id="td2">${{ fiftyTwoWeekLow }}</td>
+        </tr>
+        <tr>
+          <td>200 Day average:</td>
+          <td id="td2">${{ twoHundredDayAverage }}</td>
+        </tr>
+        <tr>
+          <td>50 Day average:</td>
+          <td id="td2">${{ fiftyDayAverage }}</td>
+        </tr>
+        <tr>
+          <td>Previous close:</td>
+          <td id="td2">${{ previousClose }}</td>
+        </tr>
+        <tr>
+          <td>Open:</td>
+          <td id="td2">${{ regularMarketOpen }}</td>
+        </tr>
+        <tr>
+          <td>52 Week change:</td>
+          <td id="td2">%{{ 52WeekChange }}</td>
+        </tr>
+        </table>
+        
         <p>
           {{ recommendations }}
         </p>

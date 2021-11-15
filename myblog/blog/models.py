@@ -25,3 +25,10 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+class stock_app(models.Model):
+    item = models.CharField(max_length=150)
+    price = models.FloatField()
+
+    def __str__(self):
+        return str(self.item)
