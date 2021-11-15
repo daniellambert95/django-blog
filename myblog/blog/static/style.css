@@ -1,5 +1,4 @@
 body {
-	margin: 0 5em;
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
@@ -10,9 +9,11 @@ img {
 }
 
 h1,
-h2,
-h3 {
+h2 {
 	text-align: center;
+}
+h3 {
+	margin: 1em 10em;
 }
 
 ul {
@@ -21,7 +22,7 @@ ul {
 
 p {
 	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-	text-align: center;
+	margin: 0 10em;
 }
 p.date {
 	text-align: right;

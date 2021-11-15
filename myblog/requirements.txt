@@ -28,3 +28,8 @@ tomli==1.2.1
 typing-extensions==3.10.0.2
 webencodings==0.5.1
 Werkzeug==2.0.2
+pandas>=0.24.0
+numpy>=1.16.5
+requests>=2.21
+multitasking>=0.0.7
+lxml>=4.5.1

@@ -11,7 +11,7 @@
         <nav>
           <ul class="navmenu">
             <li>
-              <a class="link1" href="home.html" id="currentpage"> Home</a>
+              <a class="link1" href="" id="currentpage"> Home</a>
             </li>
             <li>
               <a class="link1" href=#> Blog</a>
@@ -31,9 +31,14 @@
         </nav>
     <h1>Welcome to Daniels Blog </h1>
     <h1>Focusing on Django and the Pythonanwhere server</h1>
-     
+     <h3>The Blog</h3>
     {% for blog in blog_posts %}
         <p><a href="/blog/{{ blog.id}}/">{{ blog.title }}</a></p>
     {% endfor %}
+    <h3>My Apps</h3>
+        <p><a href="/blog/stock_api.html">Real time stock app</a></p>
+
+      
+
 </body>
 </html>

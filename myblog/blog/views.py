@@ -1,8 +1,12 @@
+import yfinance as yf
 import git
+
+# Django
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 
+# Models
 from .models import Blog
 from .models import Post
 
@@ -23,6 +27,17 @@ def post(request, id):
     post = Post.objects.get(id=id)
     context = {"post": post}
     return render(request, "blog/post.html", context)
+
+def stock_page(request):
+    stock_lander = Blog.objects.all()
+    context = {"stock_lander": stock_lander}
+    return render(request, "blog/stock_api.html", context)
+
+def stock_info(request, ticker_symbol):
+    ticker_info = yf.Ticker(ticker_symbol).info
+    context = {"ticker_info": ticker_info}
+    print(ticker_info)
+    return render(request, "blog/stock_api.html", ticker_info)
 
 
 @csrf_exempt

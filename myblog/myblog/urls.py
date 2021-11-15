@@ -27,6 +27,8 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path('summernote/', include('django_summernote.urls')),
     path("post/<int:id>/", views.post, name="post"),
+    path("blog/stock_api.html", views.stock_page, name="stock_page"),
+    path("stock/<str:ticker_symbol>/", views.stock_info, name="stock_info"),
 ]
 
 if settings.DEBUG:

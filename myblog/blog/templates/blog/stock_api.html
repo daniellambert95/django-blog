@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <body>
+        <nav>
+          <ul class="navmenu">
+            <li>
+              <a class="link1" href="" id="currentpage"> Home</a>
+            </li>
+            <li>
+              <a class="link1" href=#> Blog</a>
+            </li>
+            <li>
+              <a class="link1" href=#> About</a>
+            </li>
+          </ul>
+          <ul class="cta">
+            <li class="btn">
+              <a href="Html_files/signup.html" class="btn1"> Sign Up</a>
+            </li>
+            <li class="btn2">
+              <a href="Html_files/login.html" class="btn2"> Log In</a>
+            </li>
+          </ul>
+        </nav>
+        <h1>Stock data taken from Yahoo Finance</h1>
+      
+        <p>
+          Company name: {{ longName }}
+        </p>
+        <p>
+          Ticker symbol: {{ symbol }}
+        </p>
+        <p>
+          Currency: {{ financialCurrency }}
+        </p>
+        <p>
+          Sector: {{ sector }}
+        </p>
+        <p>
+          About: {{ longBusinessSummary }}
+        </p>
+        <p>
+          52 Week high: {{ fiftyTwoWeekHigh }}
+        </p>
+        <p>
+          52 Week low: {{ fiftyTwoWeekLow }}
+        </p>
+        <p>
+          200 Day average: {{ twoHundredDayAverage }}
+        </p>
+        <p>
+          50 Day average: {{ fiftyDayAverage }}
+        </p>
+        <p>
+          Previous close: {{ previousClose }}
+        </p>
+        <p>
+          Open: {{ regularMarketOpen }}
+        </p>
+        <p>
+          52 Week change: {{ 52WeekChange }}
+        </p>
+        <p>
+          {{ recommendations }}
+        </p>
+        <p>
+          {{ institutional_holders }}
+        </p>
+
+
+</body>
+</html>
+
